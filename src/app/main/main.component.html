@@ -1,0 +1,50 @@
+<div class="mdl-layout mdl-js-layout mdl-layout--fixed-header" xmlns:Style="http://www.w3.org/1999/xhtml"
+     xmlns:margin-right="http://www.w3.org/1999/xhtml">
+
+  <header class="mdl-layout__header">
+    <div class="mdl-layout__header-row">
+      <div class="mdl-layout-title">
+        <img src="assets/storm.png">
+      </div>
+      <div class="bordered">{{clock | async | date:'medium'}}</div>
+      <nav class="mdl-navigation">
+        <videos-search
+          (videosUpdated)="handleSearchVideo($event)"
+          [loadingInProgress]="loadingInProgress">
+        </videos-search>
+      </nav>
+    </div>
+  </header>
+
+
+  <main class="mdl-layout__content" LazyScroll (OnScrollMethod)="searchMore()" ScrollDistance="3">
+    <div class="page-content" [ngClass]="{'blur-main-playlist-opened': playlistToggle}">
+      <videos-list *ngIf="videoList.length" class="mdl-grid"
+                   (videoPlaylist)="checkAddToPlaylist($event)"
+                   [videoList]="videoList"
+                   [loadingInProgress]="loadingInProgress">
+      </videos-list>
+      <div class="loader loader-video" *ngIf="!videoList.length">
+        <div class="loading"></div>
+      </div>
+    </div>
+  </main>
+
+</div>
+
+<video-player
+  (closePlaylist)="closePlaylist()"
+  (importPlaylist)="importPlaylist($event)"
+  (exportPlaylist)="exportPlaylist()"
+  (clearPlaylist)="clearPlaylist()"
+  (playFirstInPlaylist)="playFirstInPlaylist()"
+  (repeatActive)="repeatActive($event)"
+  (shuffleActive)="shuffleActive($event)"
+  (nextVideoEvent)="nextVideo()"
+  (prevVideoEvent)="prevVideo()">
+</video-player>
+
+<div id="demo-toast-example" class="mdl-js-snackbar mdl-snackbar">
+  <div class="mdl-snackbar__text"></div>
+  <button class="mdl-snackbar__action" type="button"></button>
+</div>

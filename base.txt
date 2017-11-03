@@ -1,0 +1,61 @@
+buscar weather 
+https://openweathermap.org/city/2739187
+
+
+buscar location
+https://stackoverflow.com/questions/23185619/how-can-i-use-html5-geolocation-in-angularjs
+
+
+buscar music por aqui.. de alguma forma
+https://www.ranker.com/app/search.htm?q=The%20Best%20Songs%20about%20night
+
+api? : http://blog.ranker.com/ranker-api-opinion-rankings/#.WfiCqnZUm00
+
+
+
+
+
+
+
+
+----------------------------------------------------------------------
+																	 -
+--------            Location          Time							 -
+weather-															 -
+symbol--															 -
+--------															 -
+															----------
+        -------------------------------------------------	- preview-
+		-												-	-        -
+		-												-	----------
+		-												-
+		-				Video							-	----------
+		-												-	- preview-
+		-												-	----------
+		-------------------------------------------------	
+															----------
+															- preview-
+					 Random Video Button			       -		 -
+															----------
+
+----------------------------------------------------------------------
+
+
+
+components...
+.......................................................................................................................................................
+
+symbol--
+
+location e time; idealmente o backbround mudava com base no teu time of day
+
+main video... importar direto do youtube... com os controles stantard // eventualmente talvez nao ter video.. ter uma animaçao com base no weather
+
+barra lateral de preview feita de :
+mini videos 
+
+botao de random ...
+
+.......................................................................................................................................................
+
+era fixe ter uma hipotese de procurar locais num google maps mini...
