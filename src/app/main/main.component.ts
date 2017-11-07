@@ -28,7 +28,7 @@ export class MainComponent implements AfterViewInit, OnInit {
   lat: number;
   lon: number;
   clock = Observable.interval(1000).map(() => new Date());
-  timer = Observable.timer(60000);
+  timer = Observable.interval(60000);
 
   constructor(
     private youtubeService: YoutubeApiService,
@@ -70,6 +70,7 @@ export class MainComponent implements AfterViewInit, OnInit {
       );
     };
     this.timer.subscribe( () => this.weatherService.searchWeatherData(this.lat, this.lon).subscribe(data => {
+      console.log('update tempo');
       this.info = data.name;
       this.iconUrl = 'http://openweathermap.org/img/w/' + data.weather[0].icon + '.png';
       this.temperature = data.main.temp;

@@ -30,7 +30,7 @@ var MainComponent = /** @class */ (function () {
         this.shuffle = false;
         this.pageLoadingFinished = false;
         this.clock = Observable.interval(1000).map(function () { return new Date(); });
-        this.timer = Observable.timer(60000);
+        this.timer = Observable.interval(60000);
         this.videoPlaylist = this.playlistService.retrieveStorage().playlists;
     }
     MainComponent.prototype.ngOnInit = function () {
@@ -61,6 +61,7 @@ var MainComponent = /** @class */ (function () {
         }
         ;
         this.timer.subscribe(function () { return _this.weatherService.searchWeatherData(_this.lat, _this.lon).subscribe(function (data) {
+            console.log('update tempo');
             _this.info = data.name;
             _this.iconUrl = 'http://openweathermap.org/img/w/' + data.weather[0].icon + '.png';
             _this.temperature = data.main.temp;
