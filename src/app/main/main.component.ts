@@ -25,6 +25,8 @@ export class MainComponent implements AfterViewInit, OnInit {
   info: string;
   iconUrl: string;
   temperature: number;
+  lat: number;
+  lon: number;
   clock = Observable.interval(1000).map(() => new Date());
 
   constructor(
@@ -43,11 +45,13 @@ export class MainComponent implements AfterViewInit, OnInit {
       window.navigator.geolocation.getCurrentPosition(
         position => {
           console.log(position);
-          this.weatherService.searchWeatherData(position.coords.latitude, position.coords.longitude).subscribe(data => {
+          this.lat = position.coords.latitude;
+          this.lon = position.coords.longitude;
+          this.weatherService.searchWeatherData(this.lat, this.lon).subscribe(data => {
             this.info = data.name;
             this.iconUrl = 'http://openweathermap.org/img/w/' + data.weather[0].icon + '.png';
             this.temperature = data.main.temp;
-          });
+          })
         },
         error => {
           switch (error.code) {
@@ -64,6 +68,12 @@ export class MainComponent implements AfterViewInit, OnInit {
         }
       );
     };
+    let timer = Observable.timer(60000);
+    timer.subscribe( () => this.weatherService.searchWeatherData(this.lat, this.lon).subscribe(data => {
+      this.info = data.name;
+      this.iconUrl = 'http://openweathermap.org/img/w/' + data.weather[0].icon + '.png';
+      this.temperature = data.main.temp;
+    }));
 
   }
 

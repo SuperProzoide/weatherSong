@@ -37,7 +37,9 @@ var MainComponent = /** @class */ (function () {
         if (window.navigator && window.navigator.geolocation) {
             window.navigator.geolocation.getCurrentPosition(function (position) {
                 console.log(position);
-                _this.weatherService.searchWeatherData(position.coords.latitude, position.coords.longitude).subscribe(function (data) {
+                _this.lat = position.coords.latitude;
+                _this.lon = position.coords.longitude;
+                _this.weatherService.searchWeatherData(_this.lat, _this.lon).subscribe(function (data) {
                     _this.info = data.name;
                     _this.iconUrl = 'http://openweathermap.org/img/w/' + data.weather[0].icon + '.png';
                     _this.temperature = data.main.temp;
@@ -57,6 +59,12 @@ var MainComponent = /** @class */ (function () {
             });
         }
         ;
+        var timer = Observable.timer(60000);
+        timer.subscribe(function () { return _this.weatherService.searchWeatherData(_this.lat, _this.lon).subscribe(function (data) {
+            _this.info = data.name;
+            _this.iconUrl = 'http://openweathermap.org/img/w/' + data.weather[0].icon + '.png';
+            _this.temperature = data.main.temp;
+        }); });
     };
     MainComponent.prototype.ngAfterViewInit = function () {
         this.playlistElement = document.getElementById('playlist');
