@@ -27,6 +27,7 @@ import { VideoViewsPipe } from './shared/pipes/video-views.pipe';
 import { PlaylistItemNamePipe } from './shared/pipes/playlist-item-name.pipe';
 import { NowPlayingNamePipe } from './shared/pipes/now-playing-name.pipe';
 import { LazyScrollDirective } from './shared/directives/lazy-scroll/lazy-scroll.directive';
+import { WeatherServiceComponent } from './main/weather-service/weather-service.component';
 var AppModule = /** @class */ (function () {
     function AppModule() {
     }
@@ -49,7 +50,7 @@ var AppModule = /** @class */ (function () {
                 VideoViewsPipe,
                 PlaylistItemNamePipe,
                 NowPlayingNamePipe,
-                LazyScrollDirective
+                LazyScrollDirective,
             ],
             bootstrap: [
                 AppComponent
@@ -58,6 +59,7 @@ var AppModule = /** @class */ (function () {
                 YoutubeApiService,
                 YoutubePlayerService,
                 PlaylistStoreService,
+                WeatherServiceComponent,
                 NotificationService
             ]
         })
@@ -65,4 +67,4 @@ var AppModule = /** @class */ (function () {
     return AppModule;
 }());
 export { AppModule };
-//# sourceMappingURL=C:/Users/Altran/net-projects/ngx-youtube-player-master/src/app/app.module.js.map
+//# sourceMappingURL=C:/Users/Altran/net-projects/weatherSong/src/app/app.module.js.map

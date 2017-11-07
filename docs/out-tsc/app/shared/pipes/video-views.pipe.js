@@ -19,4 +19,4 @@ var VideoViewsPipe = /** @class */ (function () {
     return VideoViewsPipe;
 }());
 export { VideoViewsPipe };
-//# sourceMappingURL=C:/Users/Altran/net-projects/ngx-youtube-player-master/src/app/shared/pipes/video-views.pipe.js.map
+//# sourceMappingURL=C:/Users/Altran/net-projects/weatherSong/src/app/shared/pipes/video-views.pipe.js.map

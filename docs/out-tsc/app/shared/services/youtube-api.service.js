@@ -88,4 +88,4 @@ var YoutubeApiService = /** @class */ (function () {
     return YoutubeApiService;
 }());
 export { YoutubeApiService };
-//# sourceMappingURL=C:/Users/Altran/net-projects/ngx-youtube-player-master/src/app/shared/services/youtube-api.service.js.map
+//# sourceMappingURL=C:/Users/Altran/net-projects/weatherSong/src/app/shared/services/youtube-api.service.js.map

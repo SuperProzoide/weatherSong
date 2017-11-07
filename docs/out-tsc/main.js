@@ -3,4 +3,4 @@ import { enableProdMode } from '@angular/core';
 import { AppModule } from './app/';
 enableProdMode();
 platformBrowserDynamic().bootstrapModule(AppModule);
-//# sourceMappingURL=C:/Users/Altran/net-projects/ngx-youtube-player-master/src/main.js.map
+//# sourceMappingURL=C:/Users/Altran/net-projects/weatherSong/src/main.js.map

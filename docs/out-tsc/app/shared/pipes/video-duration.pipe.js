@@ -39,4 +39,4 @@ var VideoDurationPipe = /** @class */ (function () {
     return VideoDurationPipe;
 }());
 export { VideoDurationPipe };
-//# sourceMappingURL=C:/Users/Altran/net-projects/ngx-youtube-player-master/src/app/shared/pipes/video-duration.pipe.js.map
+//# sourceMappingURL=C:/Users/Altran/net-projects/weatherSong/src/app/shared/pipes/video-duration.pipe.js.map

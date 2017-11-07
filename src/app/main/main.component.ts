@@ -1,9 +1,10 @@
-import { Component, AfterViewInit } from '@angular/core';
+import {Component, AfterViewInit, OnInit} from '@angular/core';
 import { YoutubeApiService } from '../shared/services/youtube-api.service';
 import { YoutubePlayerService } from '../shared/services/youtube-player.service';
 import { PlaylistStoreService } from '../shared/services/playlist-store.service';
 import { NotificationService } from '../shared/services/notification.service';
 import {Observable} from 'rxjs/Rx';
+import {WeatherServiceComponent} from './weather-service/weather-service.component';
 
 @Component({
   selector: 'main-list',
@@ -11,7 +12,7 @@ import {Observable} from 'rxjs/Rx';
   styleUrls: ['main.component.css']
 })
 
-export class MainComponent implements AfterViewInit {
+export class MainComponent implements AfterViewInit, OnInit {
   public videoList = [];
   public videoPlaylist = [];
   public loadingInProgress = false;
@@ -21,15 +22,49 @@ export class MainComponent implements AfterViewInit {
   public shuffle = false;
   public playlistElement: any;
   private pageLoadingFinished = false;
+  info: string;
+  iconUrl: string;
+  temperature: number;
   clock = Observable.interval(1000).map(() => new Date());
 
   constructor(
     private youtubeService: YoutubeApiService,
     private youtubePlayer: YoutubePlayerService,
     private playlistService: PlaylistStoreService,
-    private notificationService: NotificationService
+    private notificationService: NotificationService,
+    private weatherService: WeatherServiceComponent
   ) {
     this.videoPlaylist = this.playlistService.retrieveStorage().playlists;
+  }
+
+  ngOnInit() {
+
+    if (window.navigator && window.navigator.geolocation) {
+      window.navigator.geolocation.getCurrentPosition(
+        position => {
+          console.log(position);
+          this.weatherService.searchWeatherData(position.coords.latitude, position.coords.longitude).subscribe(data => {
+            this.info = data.name;
+            this.iconUrl = 'http://openweathermap.org/img/w/' + data.weather[0].icon + '.png';
+            this.temperature = data.main.temp;
+          });
+        },
+        error => {
+          switch (error.code) {
+            case 1:
+              console.log('Permission Denied');
+              break;
+            case 2:
+              console.log('Position Unavailable');
+              break;
+            case 3:
+              console.log('Timeout');
+              break;
+          }
+        }
+      );
+    };
+
   }
 
   ngAfterViewInit() {

@@ -54,4 +54,4 @@ var PlaylistStoreService = /** @class */ (function () {
     return PlaylistStoreService;
 }());
 export { PlaylistStoreService };
-//# sourceMappingURL=C:/Users/Altran/net-projects/ngx-youtube-player-master/src/app/shared/services/playlist-store.service.js.map
+//# sourceMappingURL=C:/Users/Altran/net-projects/weatherSong/src/app/shared/services/playlist-store.service.js.map

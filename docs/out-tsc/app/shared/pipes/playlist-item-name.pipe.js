@@ -23,4 +23,4 @@ var PlaylistItemNamePipe = /** @class */ (function () {
     return PlaylistItemNamePipe;
 }());
 export { PlaylistItemNamePipe };
-//# sourceMappingURL=C:/Users/Altran/net-projects/ngx-youtube-player-master/src/app/shared/pipes/playlist-item-name.pipe.js.map
+//# sourceMappingURL=C:/Users/Altran/net-projects/weatherSong/src/app/shared/pipes/playlist-item-name.pipe.js.map

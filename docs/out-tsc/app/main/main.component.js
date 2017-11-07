@@ -13,12 +13,14 @@ import { YoutubePlayerService } from '../shared/services/youtube-player.service'
 import { PlaylistStoreService } from '../shared/services/playlist-store.service';
 import { NotificationService } from '../shared/services/notification.service';
 import { Observable } from 'rxjs/Rx';
+import { WeatherServiceComponent } from './weather-service/weather-service.component';
 var MainComponent = /** @class */ (function () {
-    function MainComponent(youtubeService, youtubePlayer, playlistService, notificationService) {
+    function MainComponent(youtubeService, youtubePlayer, playlistService, notificationService, weatherService) {
         this.youtubeService = youtubeService;
         this.youtubePlayer = youtubePlayer;
         this.playlistService = playlistService;
         this.notificationService = notificationService;
+        this.weatherService = weatherService;
         this.videoList = [];
         this.videoPlaylist = [];
         this.loadingInProgress = false;
@@ -30,6 +32,32 @@ var MainComponent = /** @class */ (function () {
         this.clock = Observable.interval(1000).map(function () { return new Date(); });
         this.videoPlaylist = this.playlistService.retrieveStorage().playlists;
     }
+    MainComponent.prototype.ngOnInit = function () {
+        var _this = this;
+        if (window.navigator && window.navigator.geolocation) {
+            window.navigator.geolocation.getCurrentPosition(function (position) {
+                console.log(position);
+                _this.weatherService.searchWeatherData(position.coords.latitude, position.coords.longitude).subscribe(function (data) {
+                    _this.info = data.name;
+                    _this.iconUrl = 'http://openweathermap.org/img/w/' + data.weather[0].icon + '.png';
+                    _this.temperature = data.main.temp;
+                });
+            }, function (error) {
+                switch (error.code) {
+                    case 1:
+                        console.log('Permission Denied');
+                        break;
+                    case 2:
+                        console.log('Position Unavailable');
+                        break;
+                    case 3:
+                        console.log('Timeout');
+                        break;
+                }
+            });
+        }
+        ;
+    };
     MainComponent.prototype.ngAfterViewInit = function () {
         this.playlistElement = document.getElementById('playlist');
     };
@@ -178,9 +206,10 @@ var MainComponent = /** @class */ (function () {
         __metadata("design:paramtypes", [YoutubeApiService,
             YoutubePlayerService,
             PlaylistStoreService,
-            NotificationService])
+            NotificationService,
+            WeatherServiceComponent])
     ], MainComponent);
     return MainComponent;
 }());
 export { MainComponent };
-//# sourceMappingURL=C:/Users/Altran/net-projects/ngx-youtube-player-master/src/app/main/main.component.js.map
+//# sourceMappingURL=C:/Users/Altran/net-projects/weatherSong/src/app/main/main.component.js.map

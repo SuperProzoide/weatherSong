@@ -66,4 +66,4 @@ var VideosSearchComponent = /** @class */ (function () {
     return VideosSearchComponent;
 }());
 export { VideosSearchComponent };
-//# sourceMappingURL=C:/Users/Altran/net-projects/ngx-youtube-player-master/src/app/main/videos-search/videos-search.component.js.map
+//# sourceMappingURL=C:/Users/Altran/net-projects/weatherSong/src/app/main/videos-search/videos-search.component.js.map

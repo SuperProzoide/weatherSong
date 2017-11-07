@@ -7,24 +7,21 @@ var __decorate = (this && this.__decorate) || function (decorators, target, key,
 var __metadata = (this && this.__metadata) || function (k, v) {
     if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
 };
-import { Injectable } from '@angular/core';
-var NotificationService = /** @class */ (function () {
-    function NotificationService() {
-        this.timeoutDuration = 3500;
+import { Component } from '@angular/core';
+var WeatherServiceComponent = /** @class */ (function () {
+    function WeatherServiceComponent() {
     }
-    NotificationService.prototype.showNotification = function (message) {
-        var notification = document.querySelector('.mdl-js-snackbar');
-        var data = {
-            message: message,
-            timeout: this.timeoutDuration
-        };
-        notification['MaterialSnackbar'].showSnackbar(data);
+    WeatherServiceComponent.prototype.ngOnInit = function () {
     };
-    NotificationService = __decorate([
-        Injectable(),
+    WeatherServiceComponent = __decorate([
+        Component({
+            selector: 'app-weather-service',
+            templateUrl: './weather-service.component.html',
+            styleUrls: ['./weather-service.component.css']
+        }),
         __metadata("design:paramtypes", [])
-    ], NotificationService);
-    return NotificationService;
+    ], WeatherServiceComponent);
+    return WeatherServiceComponent;
 }());
-export { NotificationService };
-//# sourceMappingURL=C:/Users/Altran/net-projects/weatherSong/src/app/shared/services/notification.service.js.map
+export { WeatherServiceComponent };
+//# sourceMappingURL=C:/Users/Altran/net-projects/weatherSong/src/app/weather-service/weather-service.component.js.map

@@ -4,9 +4,10 @@
   <header class="mdl-layout__header">
     <div class="mdl-layout__header-row">
       <div class="mdl-layout-title">
-        <img src="assets/storm.png">
+        <img src="{{iconUrl}}">
       </div>
-      <div class="bordered">{{clock | async | date:'medium'}}</div>
+      <div class="bordered">{{clock | async | date:'shortTime'}}</div>
+      <div>Location: {{info}}      Current Temperature : {{temperature}} Cº</div>
       <nav class="mdl-navigation">
         <videos-search
           (videosUpdated)="handleSearchVideo($event)"

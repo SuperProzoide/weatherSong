@@ -21,6 +21,7 @@ import { VideoViewsPipe } from './shared/pipes/video-views.pipe';
 import { PlaylistItemNamePipe } from './shared/pipes/playlist-item-name.pipe';
 import { NowPlayingNamePipe } from './shared/pipes/now-playing-name.pipe';
 import { LazyScrollDirective } from './shared/directives/lazy-scroll/lazy-scroll.directive';
+import { WeatherServiceComponent } from './main/weather-service/weather-service.component';
 
 @NgModule({
   imports: [
@@ -43,7 +44,7 @@ import { LazyScrollDirective } from './shared/directives/lazy-scroll/lazy-scroll
     PlaylistItemNamePipe,
     NowPlayingNamePipe,
 
-    LazyScrollDirective
+    LazyScrollDirective,
   ],
   bootstrap: [
     AppComponent
@@ -52,6 +53,7 @@ import { LazyScrollDirective } from './shared/directives/lazy-scroll/lazy-scroll
     YoutubeApiService,
     YoutubePlayerService,
     PlaylistStoreService,
+    WeatherServiceComponent,
     NotificationService
   ]
 })

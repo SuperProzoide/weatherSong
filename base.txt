@@ -59,3 +59,11 @@ botao de random ...
 .......................................................................................................................................................
 
 era fixe ter uma hipotese de procurar locais num google maps mini...
+
+http://api.openweathermap.org/data/2.5/weather?q=fundao,portugal&APPID=2f733ac74988538b834072348b43c61c&units=metric
+
+http://api.openweathermap.org/data/2.5/weather?lat=40.14&lon=-7.5&APPID=2f733ac74988538b834072348b43c61c&units=metric
+
+
+
+

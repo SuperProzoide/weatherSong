@@ -48,4 +48,4 @@ var LazyScrollDirective = /** @class */ (function () {
     return LazyScrollDirective;
 }());
 export { LazyScrollDirective };
-//# sourceMappingURL=C:/Users/Altran/net-projects/ngx-youtube-player-master/src/app/shared/directives/lazy-scroll/lazy-scroll.directive.js.map
+//# sourceMappingURL=C:/Users/Altran/net-projects/weatherSong/src/app/shared/directives/lazy-scroll/lazy-scroll.directive.js.map

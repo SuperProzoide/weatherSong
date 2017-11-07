@@ -47,4 +47,4 @@ var VideosListComponent = /** @class */ (function () {
     return VideosListComponent;
 }());
 export { VideosListComponent };
-//# sourceMappingURL=C:/Users/Altran/net-projects/ngx-youtube-player-master/src/app/main/videos-list/videos-list.component.js.map
+//# sourceMappingURL=C:/Users/Altran/net-projects/weatherSong/src/app/main/videos-list/videos-list.component.js.map

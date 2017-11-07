@@ -23,4 +23,4 @@ var NowPlayingNamePipe = /** @class */ (function () {
     return NowPlayingNamePipe;
 }());
 export { NowPlayingNamePipe };
-//# sourceMappingURL=C:/Users/Altran/net-projects/ngx-youtube-player-master/src/app/shared/pipes/now-playing-name.pipe.js.map
+//# sourceMappingURL=C:/Users/Altran/net-projects/weatherSong/src/app/shared/pipes/now-playing-name.pipe.js.map
