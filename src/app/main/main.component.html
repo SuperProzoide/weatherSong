@@ -7,7 +7,7 @@
         <img src="{{iconUrl}}">
       </div>
       <div class="bordered">{{clock | async | date:'shortTime'}}</div>
-      <div>Location: {{info}}      Current Temperature : {{temperature}} Cº</div>
+      <div>Location: {{info}};      Current Temperature: {{temperature}} Cº</div>
       <nav class="mdl-navigation">
         <videos-search
           (videosUpdated)="handleSearchVideo($event)"
